@@ -1,0 +1,7 @@
+
+.cryptoCoin_list{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid yellow;
+    width: 100vw;
+}

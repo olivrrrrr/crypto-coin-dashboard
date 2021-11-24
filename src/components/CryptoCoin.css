@@ -1,0 +1,19 @@
+
+*{
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+
+.cryptoCoin_container{
+    border: 1px solid black; 
+
+}
+
+.cryptoCoin{
+    text-align: center;
+}
+
+.cryptoCoin img{
+    height: 5em; 
+}

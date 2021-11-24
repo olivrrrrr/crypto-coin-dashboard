@@ -1,0 +1,11 @@
+/* div{
+    display:flex;
+    flex-wrap: wrap;
+} */
+
+.list{
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid red;
+    width: 100vw; 
+}
