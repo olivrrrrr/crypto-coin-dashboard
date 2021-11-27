@@ -1,6 +1,5 @@
 
 .coin-list{
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr);
-  border: 1px solid blue
+  width: 100vw; 
+  border: 1px solid blue;
 }

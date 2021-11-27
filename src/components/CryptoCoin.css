@@ -7,13 +7,36 @@
 
 .cryptoCoin_container{
     border: 1px solid black; 
+    border-radius: 10px;
+    width: 16.5em; 
+}
 
+.bkg-red{
+    background-color: red;
+}
+
+.bkg-green{
+    background-color: green;
 }
 
 .cryptoCoin{
+    display: flex; 
+    align-items: center;
     text-align: center;
+
+}
+
+.crypto_info{
+    display:grid;
+    border: 1px solid black; 
+    height: 4em;
+    width: 9em; 
 }
 
 .cryptoCoin img{
     height: 5em; 
+}
+
+.crypto_image{
+    padding: 1em; 
 }

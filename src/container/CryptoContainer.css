@@ -3,9 +3,35 @@
     flex-wrap: wrap;
 } */
 
-.list{
+/* .list{
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
     border: 1px solid red;
     width: 100vw; 
+
+} */
+section{
+    /* width: 100%;  */
+    border: 1px solid black; 
+    
+      
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bkg-dark{
+    background-color: black;   
+}
+
+.dark{
+    color: white;
+}
+.list{
+    border: 1px solid black; 
+    /* display: block;
+    position: relative;  */
+    /* margin: 0 auto;  */
 }
