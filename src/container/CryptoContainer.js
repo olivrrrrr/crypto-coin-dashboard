@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { useEffect, useState } from 'react';
 import CryptoViewer from '../components/CryptoList';
-import './CryptoContainer.css'
+import './CryptoContainer.css';
 import classNames from 'classnames';
+import DatatableList from '../components/DatatableList'
 
 function CryptoContainer() {
     
@@ -10,20 +11,24 @@ function CryptoContainer() {
 
     const [cryptoCoins, setCryptoCoins] =  useState([]); 
     const [filter, setFilter] = useState("");
-    const [isClicked, setIsClicked] = useState(false)
+    const [isClicked, setIsClicked] = useState(false); 
+    const [isListClicked, setIsListClicked] = useState(false); 
+
 
     const handleToggle = () =>{
         setIsClicked(!isClicked);
     } 
-   
 
+    const handleListToggle = () =>{
+        setIsListClicked(!isListClicked)
+    }
+   
     useEffect(()=>{
         fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=gbp&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C%2024h%2C7d%2C30d%2C1y")
         .then(resp=> resp.json())
         .then(data => {
             console.log(data)
-            setCryptoCoins(data)
-            
+            setCryptoCoins(data) 
         });
     }, [])
     
@@ -52,15 +57,16 @@ function CryptoContainer() {
                     <div className="navbar">
                         <h2 className={conditionalStylesTitle}>Cryptocurrency Dashboard</h2>
                         <button className="btn" onClick={handleToggle}>{isClicked ? "Light" : "Dark"}</button>
+                        <button className="btn" onClick={handleListToggle}>{isListClicked ? "List" : "Card"}</button>
                     </div>
                     <form>
                         <input type="search" placeholder="search here"  value={filter} onChange={handleType} />    
                     </form> 
-                <CryptoViewer cryptoCoins={search(cryptoCoins)} />
+                {isListClicked ? <CryptoViewer cryptoCoins={search(cryptoCoins)} /> : 
+                    <DatatableList cryptoCoins={cryptoCoins}/> }
             </div>
 
         </section>
-
 
         : 
 

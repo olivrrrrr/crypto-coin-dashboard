@@ -1,19 +1,9 @@
 import {React, useState} from 'react'; 
 import CryptoCoin from './CryptoCoin';
 import './CryptoList.css'
-// import Modal from './Modal'
-import Modal from 'react-modal'
+//import Modal from 'react-modal'
 
 function CryptoViewer({cryptoCoins}) {
-
-    const [showModal,setModal] = useState(false); 
-    
-    
-    const handleMouseOver = () => {
-        console.log("hello")
-    }
-
-  
 
    const cryptoCoin = cryptoCoins.map((cryptoCoin) =>{
     
@@ -23,9 +13,8 @@ function CryptoViewer({cryptoCoins}) {
     })
 
     return (
-        <div className="cryptoCoin_list" onMouseOver={handleMouseOver}>
+        <div className="cryptoCoin_list">
             {cryptoCoin}
-            <Modal />
         </div>
     )
 }
