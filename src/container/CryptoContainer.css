@@ -10,11 +10,14 @@
     width: 100vw; 
 
 } */
+
+
+
 section{
     /* width: 100%;  */
     border: 1px solid black; 
-    
-      
+    height:100vh;
+    width: 100vh;
 }
 
 .navbar{
@@ -24,15 +27,38 @@ section{
 }
 
 .bkg-dark{
-    background-color: black;   
+    background-color: black;  
+    color: #fff; 
+    height:100vh;
 }
 
 .dark{
-    color: white;
+    background-color: white;
 }
+
 .list{
-    border: 1px solid black; 
-    /* display: block;
-    position: relative;  */
-    /* margin: 0 auto;  */
+    border: 1px solid hotpink; 
+    width: 100%;
+    display: block;
+    position: relative;  
+  
+}
+
+
+.btn{
+    background: none;
+    border:none;
+}
+
+.sunIcon{
+    color: #fff; 
+    position: absolute;
+    top:0;
+    right:0;
+}
+
+.moonIcon{
+    position: absolute;
+    top:0;
+    right:0;
 }

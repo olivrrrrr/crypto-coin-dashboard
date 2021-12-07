@@ -4,6 +4,14 @@ import CryptoViewer from '../components/CryptoList';
 import './CryptoContainer.css';
 import classNames from 'classnames';
 import DatatableList from '../components/DatatableList'
+import Navbar from '../components/Navbar';
+import { FaSun, FaMoon} from "react-icons/fa";
+import styled, { ThemeProvider } from "styled-components"
+import {lightTheme, darkTheme, GlobalStyles} from "./theme.js"
+
+const StyledApp = styled.div`
+  color: ${(props) => props.theme.fontColor};
+`;
 
 function CryptoContainer() {
     
@@ -15,9 +23,19 @@ function CryptoContainer() {
     const [isListClicked, setIsListClicked] = useState(false); 
 
 
-    const handleToggle = () =>{
+
+    const [theme, setTheme] = useState("dark");  
+
+    const themeToggler = () => {
+        theme === "light" ? setTheme("dark") : setTheme("light")
         setIsClicked(!isClicked);
-    } 
+    }
+
+
+    // const handleToggle = () =>{
+    //     setIsClicked(!isClicked);
+    //     console.log(isClicked)
+    // } 
 
     const handleListToggle = () =>{
         setIsListClicked(!isListClicked)
@@ -41,33 +59,59 @@ function CryptoContainer() {
         return cryptoCoins.filter(cryptoCoin=>cryptoCoin.name.toLowerCase().indexOf(filter.toLowerCase().trim()) > -1)
     }   
     
-    const conditionalStyles = classNames("list_container", {
-        "bkg-dark" : isClicked,
-    })
+    // const conditionalStyles = classNames("list", {
+    //     "bkg-dark" : isClicked,
+    // })
 
-    const conditionalStylesTitle = classNames("title", {
-        "dark" : isClicked,
+    // const conditionalStylesTitle = classNames("title", {
+    //     "dark" : isClicked,
+    // })
+
+  // const [isClicked, setIsClicked] = useState(false); 
+     
+    const handleToggle = () =>{
+        setIsClicked(!isClicked);
+    }
+
+
+    const conditionalStyles = classNames("list", {
+        "bkg-dark" : isClicked,
     })
 
     
     return (
         cryptoCoins ? 
-        <section className={conditionalStyles}>
-                <div className="list">
-                    <div className="navbar">
+        <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles/>
+        <StyledApp>
+        <section >
+                <div>
+                    {/* <Navbar/> */}
+                    {/* <div className="navbar">
                         <h2 className={conditionalStylesTitle}>Cryptocurrency Dashboard</h2>
                         <button className="btn" onClick={handleToggle}>{isClicked ? "Light" : "Dark"}</button>
                         <button className="btn" onClick={handleListToggle}>{isListClicked ? "List" : "Card"}</button>
+                    </div> */}
+                     <div>
+                        <button className="btn" onClick={themeToggler}>{isClicked ?  <FaMoon className="moonIcon" /> : <FaSun className="sunIcon"/> }</button>
+                
+                            <p>Cryptocurrency Dashboard</p>
+   
+                        <div>
+                        <label for="html">Search: </label>
+                        <button className="btn" onClick={handleListToggle}>{isListClicked ? "List" : "Card"}</button>
+                        </div>
+                        <form>
+                            <label for="html">Search: </label>
+                            <input type="search" placeholder="search here"  value={filter} onChange={handleType} />    
+                        </form> 
                     </div>
-                    <form>
-                        <input type="search" placeholder="search here"  value={filter} onChange={handleType} />    
-                    </form> 
                 {isListClicked ? <CryptoViewer cryptoCoins={search(cryptoCoins)} /> : 
                     <DatatableList cryptoCoins={cryptoCoins}/> }
             </div>
-
         </section>
-
+        </StyledApp>
+        </ThemeProvider>
         : 
 
         <p>Loading...</p>

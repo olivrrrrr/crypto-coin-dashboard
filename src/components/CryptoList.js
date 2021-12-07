@@ -13,9 +13,12 @@ function CryptoViewer({cryptoCoins}) {
     })
 
     return (
-        <div className="cryptoCoin_list">
+    <section>
+         <div className="cryptoCoin_list">
             {cryptoCoin}
         </div>
+    </section>
+       
     )
 }
 

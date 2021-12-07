@@ -1,0 +1,22 @@
+
+/* .navbar-toggle{
+    display: flex;
+} */
+
+.btn{
+    background: none;
+    border:none;
+}
+
+.sunIcon{
+    position: absolute;
+    color: #fff;
+    top:0;
+    right:0;
+}
+
+.moonIcon{
+    position: absolute;
+    top:0;
+    right:0;
+}
