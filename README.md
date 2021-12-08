@@ -17,3 +17,4 @@ Todo:
 - Sort coins
 - Crypto graphs
 - Testing
+- Mobile Responsive
