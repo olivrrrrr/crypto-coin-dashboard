@@ -15,3 +15,4 @@ Todo:
 - List View Type 
 - Sort coins
 - Crypto graphs
+- Testing
