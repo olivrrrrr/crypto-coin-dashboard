@@ -1,7 +1,7 @@
 ## Cryptocurrency Dashboard
 
 Current features: 
-- Live Crpytocurrency data using the coin gecko API formatted using React.JS and CSS 
+- Accessing live Cryptocurrency data using the coin gecko API formatted using React.JS and CSS 
 - Search Function
 - Dark and Light Mode 
 - Red and Green cards dependent on 24hr price change
