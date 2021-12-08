@@ -26,6 +26,10 @@
 
 }
 
+.coin-name{
+    text-align: center;
+}
+
 .crypto_info{
     display:grid;
     /* border: 1px solid black;  */

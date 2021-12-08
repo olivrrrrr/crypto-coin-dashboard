@@ -1,7 +1,9 @@
 import React from 'react'
+import './Datatable.css'
 
 function Datatable({cryptoCoin}) {
     return (
+    <section>
         <div className="coin-container">
             <div className="coin-row ">
                 <div className="coin">
@@ -18,6 +20,7 @@ function Datatable({cryptoCoin}) {
                 }
             </div>
         </div>
+    </section>
     )
 }
 

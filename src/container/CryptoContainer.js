@@ -83,34 +83,27 @@ function CryptoContainer() {
         cryptoCoins ? 
         <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyles/>
-        <StyledApp>
-        <section >
-                <div>
-                    {/* <Navbar/> */}
-                    {/* <div className="navbar">
-                        <h2 className={conditionalStylesTitle}>Cryptocurrency Dashboard</h2>
-                        <button className="btn" onClick={handleToggle}>{isClicked ? "Light" : "Dark"}</button>
-                        <button className="btn" onClick={handleListToggle}>{isListClicked ? "List" : "Card"}</button>
-                    </div> */}
-                     <div>
-                        <button className="btn" onClick={themeToggler}>{isClicked ?  <FaMoon className="moonIcon" /> : <FaSun className="sunIcon"/> }</button>
-                
-                            <p>Cryptocurrency Dashboard</p>
-   
-                        <div>
-                        <label for="html">Search: </label>
-                        <button className="btn" onClick={handleListToggle}>{isListClicked ? "List" : "Card"}</button>
+            <StyledApp>
+                <section >
+                            <div className="landing">
+                            <button className="btn" onClick={themeToggler}>{isClicked ?  <FaMoon className="moonIcon" /> : <FaSun className="sunIcon"/> }</button>
+                            <p className="landing-title">Cryptocurrency Dashboard</p>
+
+                            <div className="landing-search"> 
+                                <label for="html">View Type: </label>
+                                <button className="btn btn--border" onClick={handleListToggle}>{isListClicked ? <StyledApp> List </StyledApp>: <StyledApp> Card </StyledApp>}</button>
+                            </div>
+
+                            <form className="landing-form">
+                                <label for="html">Search: </label>
+                                <input type="search" placeholder="search here"  value={filter} onChange={handleType} />    
+                            </form> 
+
                         </div>
-                        <form>
-                            <label for="html">Search: </label>
-                            <input type="search" placeholder="search here"  value={filter} onChange={handleType} />    
-                        </form> 
-                    </div>
-                {isListClicked ? <CryptoViewer cryptoCoins={search(cryptoCoins)} /> : 
-                    <DatatableList cryptoCoins={cryptoCoins}/> }
-            </div>
-        </section>
-        </StyledApp>
+                    {isListClicked ? <CryptoViewer cryptoCoins={search(cryptoCoins)} /> : 
+                        <DatatableList cryptoCoins={cryptoCoins}/> }
+                </section>
+            </StyledApp>
         </ThemeProvider>
         : 
 

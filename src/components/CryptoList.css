@@ -6,7 +6,7 @@
 
 section{
     /* width: 50vw; */
-    border: 1px solid white;
+    /* border: 1px solid white; */
 }
 
 .cryptoCoin_list{
@@ -17,6 +17,6 @@ section{
     grid-gap: 0.1em; 
     /* text-align: center; */
     margin: 0 auto; 
-    width: 85%;
+    width: 92%;
     /* padding: 2em;  */
 }

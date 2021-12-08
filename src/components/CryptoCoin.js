@@ -22,7 +22,7 @@ function CryptoCoin({cryptoCoin}) {
    
     return (
         <div className={conditionalStyles} onMouseOver={handleMouseOver} onMouseLeave={onLeave} >
-            {showModal ? <Modal/> : <>     <p>{cryptoCoin.name}</p>
+            <p className="coin-name">{cryptoCoin.name}</p>
             <div className="cryptoCoin">
                 <div className="crypto_image">
                      <img src={cryptoCoin.image} alt="coin"/>
@@ -34,14 +34,6 @@ function CryptoCoin({cryptoCoin}) {
                     <p>24h: {cryptoCoin.price_change_percentage_24h}%</p>
                 </div>                
             </div>
-         {/* {showModal ? <Modal/> : ""} */}
-            
-            
-            
-            
-            
-            
-            </>}
         </div>
     )
 }
