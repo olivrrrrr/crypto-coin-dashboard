@@ -12,4 +12,5 @@ Current features:
 Todo: 
 - Loading screen
 - List View Type 
+- Sort coins
 - Crypto graphs
