@@ -6,4 +6,10 @@ Current features:
 - Dark and Light Mode 
 - Red and Green cards dependent on 24hr price change
 
-<img width="1436" alt="Screenshot 2021-12-08 at 19 45 06" src="https://user-images.githubusercontent.com/68692361/145273848-1931b055-1d72-4e05-9729-5c20fa6fdb3c.png">
+
+<img width="1440" alt="Screenshot 2021-12-08 at 19 49 15" src="https://user-images.githubusercontent.com/68692361/145274513-1ae0d3e3-c1f3-4d9b-b5a7-6c3d2a37f2fe.png">
+
+Todo: 
+- Loading screen
+- List View Type 
+- Crypto graphs
